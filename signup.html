@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <title>Signup</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <img src="images/Logo.svg" alt="ProjectStack">
+            </div>
+            <ul class="navigation">
+                <a href=""><li>Become a Member Now!!</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="login_outer">
+        <div class="login_inner">
+            <form action="signup.php" method="POST">
+                <label for="usename">Username</label>
+                <input type="text" name="username">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <input class="login" type="submit" value="SignUp">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

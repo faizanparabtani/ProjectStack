@@ -1,0 +1,44 @@
+.login_outer{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_inner{
+    margin-top: 50px;
+    height: 400px;
+    width: 30%;
+    background-color: rgb(235, 235, 235);
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px 0px rgba(161,161,161,1);
+    /* box-shadow: -10px -10px 20px 0px rgba(161,161,161,1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+}
+
+label, input{
+    margin-bottom: 10px;
+}
+
+.login{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFCC57;
+    border: 0;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.login:hover{
+    color: white;
+    transition: 0.25s;
+}
