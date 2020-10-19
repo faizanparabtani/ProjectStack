@@ -94,6 +94,12 @@
     font-size: 18px;
 }
 
+.signup:hover{
+    background-color: #404046;
+    color: white;
+    transition: 0.25s;
+}
+
 .years_container{
     position: relative;
     top: 50px;
