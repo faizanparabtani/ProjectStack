@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 form{
@@ -41,4 +42,17 @@ label, input{
 .login:hover{
     color: white;
     transition: 0.25s;
+}
+
+.sign{
+    position: relative;
+    top: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #404046;
+}
+
+.sign:hover{
+    color: #FFCC57;
+    transition: .25s;
 }
