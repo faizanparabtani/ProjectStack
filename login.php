@@ -15,9 +15,9 @@ if ($count == 1) {
 	echo '<script>alert("Login Successful")</script>';
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['username'] = $_POST['username'];
-        $_SESSION['Mail'] = $row['Mail'];
-        if($_SESSION['Mail']){
-            header('location: projects.html');
+        $_SESSION['username'] = $row['UserName'];
+        if($_SESSION['username']){
+            header('location: projects.php');
         }
     }
 }else

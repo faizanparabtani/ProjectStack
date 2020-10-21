@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+<style> #table{ max-width: 2480px; width:100%; } #table td{ width: auto; overflow: hidden; word-wrap: break-word; } </style>
+
+<style>
+    
+    body {
+  background: rgb(204,204,204); 
+}
+page {
+
+ background-color: rgb(235, 235, 235);
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 10px 10px 20px 0px rgba(161,161,161,1);
+
+}
+page[size="A4"] {  
+  width: 20cm;
+  height: 20cm; 
+}
+    
+    
+</style>
+
+
+
+
+
+<page size="A4">
+
+
+
+    
+
+
+<body>
+    <div class="container"><br>
+        <h1 class="text sucess text-center">PROFILE</h1><br>
+        <div class="col-lg-8 m-auto d-block">
+            <form action="#" onsubmit="return validation()">
+                
+                
+
+                <div class="form-group">
+                    <b><label> Username: </label></b>
+                    <input type="text" name="user" class="form-control" id="user" autocomplete="off">
+                    <span id="username" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <b><label> Bio: </label></b>
+                    <input type="text" name="bio" class="form-control" id="bio" autocomplete="off">
+                    <span id="bios" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <b><label> Mobile Number: </label></b>
+                    <input type="text" name="mobile" class="form-control" id="mobileNumber" autocomplete="off">
+                    <span id="mobileno" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <b><label> Email ID: </label></b>
+                    <input type="text" name="email" class="form-control" id="emails">
+                    <span id="emailids" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <b><label> Gender: </label></b>
+                <br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+                <br>
+<br>
+                <b><label for="browser">Status:</label></b>
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="Busy">
+                    <option value="Available">
+                    </datalist>
+<br>
+<br>
+                <center><input type="submit" name="submit" value="Submit" class="btn btn-success"></center>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script type="text/JavaScript">
+         
+         function validation(){
+
+                var user =  document.getElementById('user').value;
+                var bio =  document.getElementById('bio').value;
+                var mobileNumber =  document.getElementById('mobileNumber').value;
+                var emails =  document.getElementById('emails').value;
+                
+            
+
+                if(user == ""){
+                    document.getElementById('username').innerHTML=" ** Please fill username";
+                    return false;
+                }
+               /* if((user.length <= 2) || (user.length) > 20)){
+                    document.getElementById('username').innerHTML=" ** Username length betweem 2 and 20";
+                    return false; 
+                }
+                if(!isNaN(user)){
+                    document.getElementById('username').innerHTML=" ** Only Characters are alloweds";
+                    return false; 
+
+                }*/
+
+
+
+
+                if(bio == ""){
+                    document.getElementById('bios').innerHTML=" ** Please fill Bio";
+                    return false;
+                }
+                /*if((bio.length <= 8) || (bio.length) > 40)){
+                    document.getElementById('username').innerHTML=" ** Bio length betweem 2 and 20";
+                    return false; 
+                }*/
+                
+
+
+
+                if(mobileNumber == ""){
+                    document.getElementById('mobileno').innerHTML=" ** Please fill Mobile Number";
+                    return false;
+                }
+                /*if(mobileNumber.length != 10){
+                    document.getElementById('mobileno').innerHTML=" ** Mobile Number must be 10 digits only";
+                    return false; 
+                }*/
+
+
+
+
+                if(emails == ""){
+                    document.getElementById('emailids').innerHTML=" ** Please fill Email Id";
+                    return false;
+                }
+                /*if(emails.indexof('@') <= 0""){
+                    document.getElementById('emailids').innerHTML=" ** @ Invalid Position";
+                    return false;
+                }
+                if((emails.charAt(emails.length-4) != '.') && (emails.charAt(emails.length-3) != '.')){
+                    document.getElementById('emailids').innerHTML=" ** Please fill Email Id";
+                    return false;
+                }*/
+
+            }   
+    </script>
+</body>
+</html>
