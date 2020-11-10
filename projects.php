@@ -1,6 +1,14 @@
 <?php
 session_start();
 include 'dbcon.php';
+
+if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+    header("Location: login.html");
+    exit;
+}
+
+
+$username = $_SESSION['username'];
 $sql = "SELECT * FROM Projects ORDER BY upload_time DESC";
 // $sql = "SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC";
 // $sql = "SELECT projectid FROM (SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC) SQ ORDER BY upload_time ASC";
@@ -19,7 +27,7 @@ $_SESSION['row_count'] = $count;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="projects.css">
 </head>
@@ -27,11 +35,13 @@ $_SESSION['row_count'] = $count;
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
+              <a href="projects.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
+              </a>
             </div>
             <ul class="navigation">
-                <a href="projects.html"><li>Projects</li></a>
-                <a href="login.html"><li><?php echo $_SESSION['username'];?></li></a>
+                <!-- <a href="projects.html"><li>Projects</li></a> -->
+                <a href="login.html"><li><?php echo $username;?></li></a>
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
         </div>
@@ -41,8 +51,8 @@ $_SESSION['row_count'] = $count;
         <div class="browse">
             <h2>Browse the recent projects</h2>
         </div>
-        <div class="recent"> 
-            <?php 
+        <div class="recent">
+            <?php
             echo "<table class='table'>";
             echo "<thead class='thead-primary'>";
               echo "<tr class='text-center'>";
@@ -67,9 +77,9 @@ $_SESSION['row_count'] = $count;
     </div>
     <div class="years_container">
             <div class="years">
-                <button class="year_button" onclick="location.href='fe.html'">First Year</button>
-                <button class="year_button" onclick="location.href='se.html'">Second Year</button>
-                <button class="year_button" onclick="location.href='te.html'">Third Year</button>
+                <button class="year_button" onclick="location.href='fe.php'">First Year</button>
+                <button class="year_button" onclick="location.href='se.php'">Second Year</button>
+                <button class="year_button" onclick="location.href='te.php'">Third Year</button>
             </div>
         </div>
         <div class="activity_container">
@@ -77,6 +87,6 @@ $_SESSION['row_count'] = $count;
             <div class="upload"><img src="images/upload.svg" alt=""></div>
             <div class="download"><img src="images/download.svg" alt=""></div>
         </div>
-    </div> 
+    </div>
 </body>
 </html>

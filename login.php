@@ -14,6 +14,7 @@ $count = mysqli_num_rows($result);
 if ($count == 1) {
 	echo '<script>alert("Login Successful")</script>';
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+				$_SESSION["login"] = "OK";
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['username'] = $row['UserName'];
         if($_SESSION['username']){
@@ -23,6 +24,6 @@ if ($count == 1) {
 }else
 {
 	echo '<script>alert("Login Unsuccessful")</script>';
-	header('location: login.html');	
+	header('location: login.html');
 }
 ?>
