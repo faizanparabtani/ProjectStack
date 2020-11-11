@@ -19,6 +19,7 @@ if (!$result) {
 }
 $count = mysqli_num_rows($result);
 $_SESSION['row_count'] = $count;
+
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +27,10 @@ $_SESSION['row_count'] = $count;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <div class="header">
@@ -40,7 +41,6 @@ $_SESSION['row_count'] = $count;
               </a>
             </div>
             <ul class="navigation">
-                <!-- <a href="projects.html"><li>Projects</li></a> -->
                 <a href="login.html"><li><?php echo $username;?></li></a>
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
@@ -53,9 +53,9 @@ $_SESSION['row_count'] = $count;
         </div>
         <div class="recent">
             <?php
-            echo "<table class='table'>";
-            echo "<thead class='thead-primary'>";
-              echo "<tr class='text-center'>";
+            echo "<table>";
+            echo "<thead>";
+              echo "<tr>";
                 echo "<th>Topic</th>";
                 echo "<th>Contributor</th>";
                 echo "<th>Date</th>";
@@ -63,11 +63,13 @@ $_SESSION['row_count'] = $count;
             echo "</thead>";
             echo "<tbody>";
             while($row = mysqli_fetch_array($result)){
-                // echo "<h1>" .$row['topic']. " by user ".$row['UserName']." posted on ".$row['upload_time']."</h1>";
+                $time = $row['upload_time'];
+                $temptime = strtotime($time);
+                $finaltime = date("d/m/y g:i A", $temptime);
                 echo "<tr>";
-                echo "<td>" .$row['topic']. "</td>";
+                echo "<td><a class='varlink' href='project.php?projectid=" .$row['projectid'] . "'>" .$row['topic']. "</a></td>";
                 echo "<td>" .$row['UserName']. "</td>";
-                echo "<td>" .$row['upload_time']. "</td>";
+                echo "<td>" .$finaltime. "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -83,10 +85,16 @@ $_SESSION['row_count'] = $count;
             </div>
         </div>
         <div class="activity_container">
-            <div class="view"><img src="images/view.svg" alt=""></div>
-            <div class="upload"><img src="images/upload.svg" alt=""></div>
-            <div class="download"><img src="images/download.svg" alt=""></div>
+            <div class="view"><img src="images/view.svg" alt="">View</div>
+            <div class="upload"><img src="images/upload.svg" alt="">Upload</div>
+            <div class="download"><img src="images/download.svg" alt=""><span>Download</span></div>
         </div>
+    </div>
+    <div class="students">
+      <img src="images/class.svg" alt="students">
+    </div>
+    <div class="projectsvg">
+      <img src="images/project.svg" alt="project">
     </div>
 </body>
 </html>

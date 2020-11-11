@@ -1,0 +1,29 @@
+.recent{
+    display: flex;
+    justify-content: space-around;
+}
+
+table{
+  width: 700px;
+  justify-content: space-between;
+}
+
+th{
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 22px;
+  color: purple;
+}
+
+tr{
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+td a{
+  font-size: 20px;
+}
+
+
+.varlink{
+  padding: 20px;
+  color: black;
+}

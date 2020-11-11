@@ -1,0 +1,63 @@
+.browse{
+    font-family: 'Montserrat', 'sans-serif';
+    background-color: paleturquoise;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.recent{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+thead{
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 22px;
+}
+
+tr{
+  padding: 10px;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+td a{
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+.varlink{
+  padding: 20px;
+  color: black;
+}
+
+
+.students img, .projectsvg img{
+  position: absolute;
+  max-width: 400px;
+  max-height: 300px;
+  opacity: 0.5;
+  top: 150px;
+  left: 50px;
+  z-index: -1;
+}
+
+.projectsvg img{
+  top: 150px;
+  left: 1100px;
+}
+
+.view, .upload, .download{
+  font-family: 'Montserrat', 'sans-serif';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.download span{
+  padding-top: 10px;
+}

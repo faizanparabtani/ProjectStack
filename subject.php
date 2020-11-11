@@ -28,32 +28,56 @@ $_SESSION['row_count'] = $count;
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="projects.css">
+    <title><?php echo $subject ?></title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="subject.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+              <a href="projects.php">
+                <img src="images/Logo.svg" alt="ProjectStack">
+              </a>
+            </div>
+            <ul class="navigation">
+                <a href="dashboard.php"><li>Projects</li></a>
+                <a href="login.html"><li><?php echo $username;?></li></a>
+                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="home">
+    <div class="recent_proj">
+        <div class="browse">
+            <h2>Browse the recent projects</h2>
+        </div>
     <div class="recent">
         <?php
-        echo "<table class='table'>";
-        echo "<thead class='thead-primary'>";
-          echo "<tr class='text-center'>";
+        echo "<table>";
+        echo "<th>";
+          echo "<tr>";
             echo "<th>Topic</th>";
             echo "<th>Contributor</th>";
             echo "<th>Date</th>";
           echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
+        echo "</th>";
         while($row = mysqli_fetch_array($result)){
-            // echo "<h1>" .$row['topic']. " by user ".$row['UserName']." posted on ".$row['upload_time']."</h1>";
+            $time = $row['upload_time'];
+            $temptime = strtotime($time);
+            $finaltime = date("d/m/y g:i A", $temptime);
             echo "<tr>";
-            echo "<td>" .$row['topic']. "</td>";
+            echo "<td><a class='varlink' href='project.php?projectid=" .$row['projectid'] . "'>" .$row['topic']. "</a></td>";
             echo "<td>" .$row['UserName']. "</td>";
-            echo "<td>" .$row['upload_time']. "</td>";
+            echo "<td>" .$finaltime. "</td>";
             echo "</tr>";
         }
-        echo "</tbody>";
         echo "</table>";
+        echo "<a href='upload.php?subject=" .$subject. "&year=" .$year. "'>Upload</a>";
         ?>
+      </div>
     </div>
   </body>
 </html>

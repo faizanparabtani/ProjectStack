@@ -18,7 +18,7 @@ if ($count == 1) {
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['username'] = $row['UserName'];
         if($_SESSION['username']){
-            header('location: projects.php');
+            header('location: dashboard.php');
         }
     }
 }else
