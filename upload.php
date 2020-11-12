@@ -1,4 +1,5 @@
 <?php
+// error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 include 'dbcon.php';
 
@@ -9,65 +10,40 @@ if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
 
 
 $username = $_SESSION['username'];
-$subject = $_GET['subject'];
-$year = $_GET['year'];
+$subject = $_SESSION['subject_sess'];
+$year = $_SESSION['year_sess'];
 
-$sql = "SELECT * FROM Projects WHERE projectid IN (SELECT $subject FROM $year)";
-$result = mysqli_query($conn, $sql);
-if (!$result) {
-    printf("Error: %s\n", mysqli_error($conn));
-    exit();
-}
-$count = mysqli_num_rows($result);
-$_SESSION['row_count'] = $count;
 
-?>
+$topic = $_POST['topic'];
+$description = $_POST['description'];
+$tc = $_POST['tc'];
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Upload</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="base.css">
-  </head>
-  <body>
-    <div class="header">
-        <div class="inner_header">
-            <div class="logo_container">
-              <a href="projects.php">
-                <img src="images/Logo.svg" alt="ProjectStack">
-              </a>
-            </div>
-            <ul class="navigation">
-                <a href="dashboard.php"><li>Projects</li></a>
-                <a href="login.html"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
-            </ul>
-        </div>
-    </div>
-    <div class="parent">
-      <div class="project">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
-          <label for="Topic">Topic Name</label>
-          <input type="text" name="topic">
-          <label for="description">Description</label>
-          <textarea name="Description" rows="4" cols="50"></textarea>
-          <label for="image">Image</label>
-          <input type="file" name="image">
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+if ($tc == "Agree") {
+  if ($topic != "" || $description != "") {
+    if ($_FILES["image"]["error"] > 0){
+       echo "<font size = '5'><font color=\"#e31919\">Error: NO CHOSEN FILE <br />";
+       echo"<p><font size = '5'><font color=\"#e31919\">INSERT TO DATABASE FAILED";
+     }
+    else{
+     move_uploaded_file($_FILES["image"]["tmp_name"],"useruploads/" . $_FILES["image"]["name"]);
+     echo"<font size = '5'><font color=\"#0CF44A\">SAVED<br>";
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST['fname'];
-  if (empty($name)) {
-    echo "Name is empty";
-  } else {
-    echo $name;
+     $file="useruploads/".$_FILES["image"]["name"];
+     // INSERT INTO `Projects` (`projectid`, `UserName`, `Subject`, `year`, `topic`, `description`, `image`, `upload_time`) VALUES (NULL, 'faizan123', 'DBMS', 'SE', 'Hello', 'Test', 'useruploads/dbms.jpg', CURRENT_TIMESTAMP);
+     $sql = "INSERT INTO Projects (projectid, UserName, Subject, year, topic, description, image, upload_time) values (NULL, '$username', '$subject', '$year', '$topic', '$description', '$file', CURRENT_TIMESTAMP)";
+     $result = mysqli_query($conn, $sql);
+     if (!$result) {
+         printf("Error: %s\n", mysqli_error($conn));
+         exit();
+     }
+    }
   }
+  else {
+    echo "<script>alert('One or more required fields are empty')</script>";
+
+  }
+}
+else {
+  echo "<script>alert('Agree the T&C if you want to post the project')</script>";
 }
 ?>

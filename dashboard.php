@@ -6,7 +6,8 @@ if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
     header("Location: login.html");
     exit;
 }
-
+$_SESSION['subject_sess'] = "";
+$_SESSION['year_sess'] = ""; 
 
 $username = $_SESSION['username'];
 $sql = "SELECT * FROM Projects ORDER BY upload_time DESC";

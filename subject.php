@@ -12,6 +12,9 @@ $username = $_SESSION['username'];
 $subject = $_GET['subject'];
 $year = $_GET['year'];
 
+$_SESSION['subject_sess'] = $subject;
+$_SESSION['year_sess'] = $year;
+
 $sql = "SELECT * FROM Projects WHERE projectid IN (SELECT $subject FROM $year)";
 // $sql = "SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC";
 // $sql = "SELECT projectid FROM (SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC) SQ ORDER BY upload_time ASC";
@@ -38,7 +41,7 @@ $_SESSION['row_count'] = $count;
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="dashboard.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>
@@ -75,7 +78,7 @@ $_SESSION['row_count'] = $count;
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='upload.php?subject=" .$subject. "&year=" .$year. "'>Upload</a>";
+        echo "<a href='upload.html?subject=" .$subject. "&year=" .$year. "'>Upload</a>";
         ?>
       </div>
     </div>

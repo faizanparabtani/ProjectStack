@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,29 +6,35 @@
     <title>Upload</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="upload.css">
   </head>
   <body>
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="dashboard.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
-                <!-- <a href="login.html"><li><?php echo $username;?></li></a> -->
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
         </div>
     </div>
     <div class="parent">
       <div class="project">
-        <form action="upload.php" method="post">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
           <label for="Topic">Topic Name</label>
           <input type="text" name="topic">
           <label for="description">Description</label>
-          <textarea name="Description" rows="4" cols="50"></textarea>
+          <textarea name="description" rows="4" cols="50"></textarea>
+          <label for="image">Image</label>
+          <input type="file" accept="image/jpeg" name="image">
+          <label for="tc">Do you agree the terms and conditions?<a href="tc.html">Read</a></label>
+          <input type="radio" name="tc" value="Agree">
+          <label for="agree" class="agr">Agree</label><br>
+          <input class="sub" type="submit" name="submit" value="Submit">
         </form>
       </div>
     </div>
