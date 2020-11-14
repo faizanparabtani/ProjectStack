@@ -7,7 +7,7 @@ if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
     exit;
 }
 $_SESSION['subject_sess'] = "";
-$_SESSION['year_sess'] = ""; 
+$_SESSION['year_sess'] = "";
 
 $username = $_SESSION['username'];
 $sql = "SELECT * FROM Projects ORDER BY upload_time DESC";
@@ -42,7 +42,7 @@ $_SESSION['row_count'] = $count;
               </a>
             </div>
             <ul class="navigation">
-                <a href="login.html"><li><?php echo $username;?></li></a>
+                <a href="profile.php"><li><?php echo $username;?></li></a>
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
         </div>

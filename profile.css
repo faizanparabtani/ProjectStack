@@ -1,0 +1,41 @@
+.parent_cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+}
+
+.background_container img{
+  max-width: 1000px;
+  max-height: 400px;
+}
+
+.profile_img_container{
+  position: relative;
+  bottom: 90px;
+}
+
+
+.profile_img_container img{
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 100px;
+  position: relative;
+}
+
+.bio_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  position: relative;
+  bottom: 70px;
+}
