@@ -14,6 +14,7 @@
 }
 
 .background_container img{
+  margin-top: 2vh;
   max-width: 1000px;
   max-height: 400px;
 }
@@ -32,10 +33,31 @@
 }
 
 .bio_container{
+  font-family: 'Montserrat', 'sans-serif';
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1000px;
   position: relative;
   bottom: 70px;
+}
+
+table, .browse{
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+tr{
+  padding: 10px;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+td a{
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+.varlink{
+  padding: 20px;
+  color: black;
 }

@@ -53,16 +53,23 @@ $_SESSION['row_count'] = $count;
           <h3>Hello I am Faizan</h3>
         </div>
       </div>
+      <?php if($count > 0){
+        echo "
+          <div class='browse'>
+            <h3>Browse their Projects</h3>
+          </div>
+        ";
+      }
+      ?>
       <div class="project_cont">
         <?php
         echo "<table>";
-        echo "<thead>";
+        echo "<th>";
           echo "<tr>";
             echo "<th>Topic</th>";
-            echo "<th>Contributor</th>";
             echo "<th>Date</th>";
           echo "</tr>";
-        echo "</thead>";
+        echo "</th>";
         echo "<tbody>";
         while($row = mysqli_fetch_array($result)){
             $time = $row['upload_time'];
@@ -70,7 +77,6 @@ $_SESSION['row_count'] = $count;
             $finaltime = date("d/m/y g:i A", $temptime);
             echo "<tr>";
             echo "<td><a class='varlink' href='project.php?projectid=" .$row['projectid'] . "'>" .$row['topic']. "</a></td>";
-            echo "<td>" .$row['UserName']. "</td>";
             echo "<td>" .$finaltime. "</td>";
             echo "</tr>";
         }

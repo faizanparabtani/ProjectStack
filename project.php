@@ -31,6 +31,7 @@ $year = $row['year'];
     <title><?php echo "Project" .$projectid; ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="project.css">
   </head>
   <body>
     <div class="header">
@@ -48,6 +49,18 @@ $year = $row['year'];
             </ul>
         </div>
     </div>
-    <h2><?php echo $row['topic']; ?></h2>
+    <div class="proj_parent">
+      <div class="proj">
+        <div class="title">
+          <h1><?php echo $row['topic']; ?></h1>
+        </div>
+        <div class="image">
+          <?php echo "<img class='project_image'src='" .$row['image']. "' alt='project_image'>" ?>
+        </div>
+        <div class="description">
+          <p><?php echo $row['description']; ?></p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
