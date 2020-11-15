@@ -38,23 +38,27 @@ $username = $_SESSION['username'];
 
 <p id="rcorners2" align="center"></p>
 <p id="ayetext" align="center">Se.</p>
-<p id="ayeyear" align="center">Second Year</p>
+<p id="ayeyear" >Second Year</p>
 <p id="ayesub" >Boost your pointer this year by refering to these projects made in previous years.</p>
 <p id="ayesub1" >Everything you need to build a functional project for all your subjects</p><br>
 <p id="ayenoofsub" align="center"></p>
 <p id="ayenoofsubtext" align="center">5 subjects</p>
 
-
+<p id="ayesem1box"></p>
 <p id="ayesem1">Semester 3</p>
+<p id="ayesem2box"></p>
 <p id="ayesem2">Semester 4</p>
 
-<a href="subject.php?subject=DBMS&year=SE" id="dbms"><li>DBMS</li></a>
-<a href="subject.php?subject=LD&year=SE" id="ld"><li>LD</li></a>
-<a href="subject.php?subject=DSA&year=SE" id="dsa"><li>DSA</li></a>
-<a href="subject.php?subject=JPR&year=SE" id="jpr"><li>JPR</li></a>
-<a href="subject.php?subject=PY&year=SE" id="py"><li>PY</li></a>
+<a href="subject.php?subject=DBMS&year=SE" id="dbms"><li>Database Management system</li></a>
+<a href="subject.php?subject=LD&year=SE" id="ld"><li>Logic Design
+</li></a>
+<a href="subject.php?subject=DSA&year=SE" id="dsa"><li>Data structures and algorithm analysis</li></a>
+<a href="subject.php?subject=JPR&year=SE" id="jpr"><li>Java Programming</li></a>
+<a href="subject.php?subject=PY&year=SE" id="py"><li>Python Programming</li></a>
 
 
+
+<img src="images/svse.svg" id="svg">
 
 <footer>
 

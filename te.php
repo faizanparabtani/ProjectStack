@@ -38,20 +38,24 @@ $username = $_SESSION['username'];
 
 <p id="rcorners3" align="center"></p>
 <p id="ayetext" align="center">Te.</p>
-<p id="ayeyear" align="center">Third Year</p>
+<p id="ayeyear">Third Year</p>
 <p id="ayesub" >Boost your pointer this year by refering to these projects made in previous years.</p>
 <p id="ayesub1" >Everything you need to build a functional project for all your subjects</p><br>
 <p id="ayenoofsub" align="center"></p>
-<p id="ayenoofsubtext" align="center">2 subjects</p>
+<p id="ayenoofsubtext" align="center">3 subjects</p>
 
 
+<p id="ayesem1box"></p>
 <p id="ayesem1">Semester 5</p>
+<p id="ayesem2box"></p>
 <p id="ayesem2">Semester 6</p>
-<ul type="disc">
-                <a href="subject.php?subject=BEE&year=TE"><li>BEE</li></a>
-                <a href="subject.php?subject=CC&year=TE"><li>CC</li></a>
 
-            </ul>
+                <a href="subject.php?subject=IP&year=TE" id="dbms"><li>Internet Programming</li></a>
+                <a href="subject.php?subject=IOT&year=TE" id="iot"><li>Internet of Things(IoT)</li></a>
+<a href="subject.php?subject=WN&year=TE" id="py"><li>Wireless Networks</li></a>
+
+
+<img src="images/svte.svg" id="svg">
 
 <footer>
 
