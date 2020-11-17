@@ -44,7 +44,7 @@ $year = $row['year'];
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
                 <?php echo "<a href='subject.php?subject=".$subject. "&year=" .$year. "'><li>" .$subject. "</li></a>" ?>
-                <a href="login.html"><li><?php echo $username;?></li></a>
+                <a href="profile.php"><li><?php echo $username;?></li></a>
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
         </div>
@@ -52,7 +52,7 @@ $year = $row['year'];
     <div class="proj_parent">
       <div class="proj">
         <div class="title">
-          <h1><?php echo $row['topic']; ?></h1>
+          <h1><?php echo $row['topic'];?></h1>
         </div>
         <div class="image">
           <?php echo "<img class='project_image'src='" .$row['image']. "' alt='project_image'>" ?>
@@ -62,5 +62,25 @@ $year = $row['year'];
         </div>
       </div>
     </div>
+    <footer class="footer">
+        <div class="footer_logo">
+            <img src="images/Logo.svg">
+        </div>
+        <div>
+            <h3>Read more about<br>our mission</h3>
+            <a href="about.html"><h4>About Us</h4></a>
+        </div>
+        <div>
+            <h3>Legal</h3>
+            <h4>T&C</h4>
+            <h4>Policies</h4>
+        </div>
+        <div class="social_links">
+            <h3>Social</h3>
+            <h4>Twitter</h4>
+            <h4>Instagram</h4>
+            <h4>Facebook</h4>
+        </div>
+    </footer>
   </body>
 </html>

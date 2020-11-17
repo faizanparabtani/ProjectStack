@@ -176,7 +176,7 @@
 }
 
 #rcorners2 {
-  
+
 position: absolute;
 width: 242px;
 height: 201px;
@@ -188,7 +188,7 @@ border-radius: 25px;
 }
 
 #rcorners3 {
-  
+
 position: absolute;
 width: 242px;
 height: 201px;
@@ -476,4 +476,48 @@ top: 250px;
 
 background: url(image.png);
 opacity: 0.75;
+}
+
+.view, .upload, .download{
+  font-family: 'Montserrat', 'sans-serif';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sem_footer{
+    font-family: 'Montserrat', 'sans-serif';
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 200px;
+    background-color: #404046;
+    position: absolute;
+    top: 700px;
+    width: 100%;
+}
+
+
+.download span{
+  padding-top: 10px;
+}
+
+.footer{
+    font-family: 'Montserrat', 'sans-serif';
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 200px;
+    background-color: #404046;
+}
+
+.footer h4, .sem_footer h4{
+    padding-top: 5px;
+    color: white;
+}
+
+.footer h3, .sem_footer h3{
+    color: #FFCC57
 }
