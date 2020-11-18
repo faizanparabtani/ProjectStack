@@ -10,9 +10,13 @@ $_SESSION['subject_sess'] = "";
 $_SESSION['year_sess'] = "";
 
 $username = $_SESSION['username'];
-$sql = "SELECT * FROM Projects ORDER BY upload_time DESC";
-// $sql = "SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC";
-// $sql = "SELECT projectid FROM (SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC) SQ ORDER BY upload_time ASC";
+
+
+ $sql = "SELECT * FROM (
+    SELECT * FROM Projects ORDER BY upload_time DESC LIMIT 10
+) sub
+ORDER BY upload_time DESC";
+
 $result = mysqli_query($conn, $sql);
 if (!$result) {
     printf("Error: %s\n", mysqli_error($conn));

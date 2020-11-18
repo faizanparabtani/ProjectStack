@@ -27,3 +27,25 @@ td a{
   padding: 20px;
   color: black;
 }
+
+.upload_btn{
+  font-family: 'Montserrat', 'sans-serif';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 0;
+  background-color: #FFCC57;
+  height: 50px;
+  width: 125px;
+  border-radius: 30px;
+  font-size: 18px;
+  border: 4px solid #404046;
+  color: black;
+}
+
+.upload_btn:hover{
+  transition: 0.5s ease;
+  background-color: #404046;
+  color:  white;
+}

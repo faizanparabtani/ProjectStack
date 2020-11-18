@@ -22,7 +22,7 @@ $username = $_SESSION['username'];
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="dashboard.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>

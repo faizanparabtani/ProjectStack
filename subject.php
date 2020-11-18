@@ -47,7 +47,7 @@ $_SESSION['row_count'] = $count;
             </div>
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
-                <a href="login.html"><li><?php echo $username;?></li></a>
+                <a href="profile.php"><li><?php echo $username;?></li></a>
                 <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
             </ul>
         </div>
@@ -78,7 +78,7 @@ $_SESSION['row_count'] = $count;
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='upload.html?subject=" .$subject. "&year=" .$year. "'>Upload</a>";
+        echo "<a href='upload.html?subject=" .$subject. "&year=" .$year. "'><div class='upload_btn'>Upload</div></a>";
         ?>
       </div>
     </div>
