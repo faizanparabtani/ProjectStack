@@ -12,7 +12,6 @@ $row = mysqli_fetch_array($result);
 $count = mysqli_num_rows($result);
 if ($count == 1) {
    header('location: signup.html');
-   echo '<script>alert("Username Already Exists")</script>';
 }
 else
 {

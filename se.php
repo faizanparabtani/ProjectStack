@@ -1,11 +1,11 @@
 <?php
 session_start();
 include 'dbcon.php';
-
-if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
-    header("Location: login.html");
-    exit;
-}
+error_reporting(0);
+// if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+//     header("Location: login.html");
+//     exit;
+// }
 $username = $_SESSION['username'];
 ?>
 

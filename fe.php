@@ -1,11 +1,11 @@
 <?php
 session_start();
 include 'dbcon.php';
-
-if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
-    header("Location: login.html");
-    exit;
-}
+error_reporting(0);
+// if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+//     header("Location: login.html");
+//     exit;
+// }
 $username = $_SESSION['username'];
 ?>
 
@@ -22,7 +22,7 @@ $username = $_SESSION['username'];
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="dashboard.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>

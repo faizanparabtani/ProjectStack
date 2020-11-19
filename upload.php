@@ -36,14 +36,18 @@ if ($tc == "Agree") {
          printf("Error: %s\n", mysqli_error($conn));
          exit();
      }
+     else{
+      header('location: dashboard.php');
+     }
     }
   }
   else {
-    echo "<script>alert('One or more required fields are empty')</script>";
-
+    die('Description field is empty');
+    // header('location: upload.html');
+    
   }
 }
 else {
-  echo "<script>alert('Agree the T&C if you want to post the project')</script>";
+  header('location: upload.html?subject=$subject&year=$year');
 }
 ?>

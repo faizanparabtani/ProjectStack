@@ -1,11 +1,11 @@
 <?php
 session_start();
 include 'dbcon.php';
-
-if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
-    header("Location: login.html");
-    exit;
-}
+error_reporting(0);
+// if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+//     header("Location: login.html");
+//     exit;
+// }
 
 
 $username = $_SESSION['username'];
@@ -15,7 +15,8 @@ $year = $_GET['year'];
 $_SESSION['subject_sess'] = $subject;
 $_SESSION['year_sess'] = $year;
 
-$sql = "SELECT * FROM Projects WHERE projectid IN (SELECT $subject FROM $year)";
+//$sql = "SELECT * FROM Projects WHERE projectid IN (SELECT $subject FROM $year)";
+$sql = "SELECT * FROM Projects WHERE Subject='$subject'";
 // $sql = "SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC";
 // $sql = "SELECT projectid FROM (SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC) SQ ORDER BY upload_time ASC";
 $result = mysqli_query($conn, $sql);
