@@ -75,17 +75,18 @@
 
 .tagline h2{
     position: relative;
-    top: 250px;
+    top: 150px;
     left: 100px;
     font-size: 25px;
     color: #404046;
     max-width: 650px;
 }
 
+
 .signup{
     position: relative;
-    left: 150px;
-    top: 200px;
+    left: 250px;
+    top: 100px;
     border: 0;
     background-color: #FFCC57;
     height: 50px;
