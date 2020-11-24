@@ -50,7 +50,7 @@ $_SESSION['row_count'] = $count;
           <?php echo "<img src='profile_img/" .$username. ".jpg'>";?>
         </div>
         <div class="bio_container">
-          <h3>Hello I am Faizan</h3>
+          <h3>Hello I am <?php echo $username;?></h3>
         </div>
       </div>
       <?php if($count > 0){
