@@ -16,7 +16,11 @@ $_SESSION['subject_sess'] = $subject;
 $_SESSION['year_sess'] = $year;
 
 //$sql = "SELECT * FROM Projects WHERE projectid IN (SELECT $subject FROM $year)";
-$sql = "SELECT * FROM Projects WHERE Subject='$subject'";
+$sql = "SELECT * FROM (
+    SELECT * FROM Projects WHERE Subject='$subject' ORDER BY upload_time DESC
+) sub
+ORDER BY upload_time DESC";
+// $sql = "SELECT * FROM Projects WHERE Subject='$subject'";
 // $sql = "SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC";
 // $sql = "SELECT projectid FROM (SELECT TOP 10 projectid FROM Projects ORDER BY upload_time DESC) SQ ORDER BY upload_time ASC";
 $result = mysqli_query($conn, $sql);

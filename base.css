@@ -141,7 +141,7 @@
     padding: 30px;
 }
 
-.view, .upload, .download{
+.view, .upload{
     display: flex;
     justify-content: center;
     align-items: center;

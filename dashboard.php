@@ -92,7 +92,6 @@ $_SESSION['row_count'] = $count;
         <div class="activity_container">
             <div class="view"><img src="images/view.svg" alt="">View</div>
             <div class="upload"><img src="images/upload.svg" alt="">Upload</div>
-            <div class="download"><img src="images/download.svg" alt=""><span>Download</span></div>
         </div>
     </div>
     <div class="students">

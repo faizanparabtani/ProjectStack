@@ -1,5 +1,5 @@
 <?php
-// error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 include 'dbcon.php';
 
@@ -14,9 +14,15 @@ $subject = $_SESSION['subject_sess'];
 $year = $_SESSION['year_sess'];
 
 
+
 $topic = $_POST['topic'];
 $description = $_POST['description'];
+$code = $_POST['code'];
 $tc = $_POST['tc'];
+
+
+
+
 
 if ($tc == "Agree") {
   if ($topic != "" || $description != "") {
@@ -30,7 +36,7 @@ if ($tc == "Agree") {
 
      $file="useruploads/".$_FILES["image"]["name"];
      // INSERT INTO `Projects` (`projectid`, `UserName`, `Subject`, `year`, `topic`, `description`, `image`, `upload_time`) VALUES (NULL, 'faizan123', 'DBMS', 'SE', 'Hello', 'Test', 'useruploads/dbms.jpg', CURRENT_TIMESTAMP);
-     $sql = "INSERT INTO Projects (projectid, UserName, Subject, year, topic, description, image, upload_time) values (NULL, '$username', '$subject', '$year', '$topic', '$description', '$file', CURRENT_TIMESTAMP)";
+     $sql = "INSERT INTO Projects (projectid, UserName, Subject, year, topic, description, code, image, upload_time) values (NULL, '$username', '$subject', '$year', '$topic', '$description', '$code', '$file', CURRENT_TIMESTAMP)";
      $result = mysqli_query($conn, $sql);
      if (!$result) {
          printf("Error: %s\n", mysqli_error($conn));
@@ -43,8 +49,6 @@ if ($tc == "Agree") {
   }
   else {
     die('Description field is empty');
-    // header('location: upload.html');
-    
   }
 }
 else {

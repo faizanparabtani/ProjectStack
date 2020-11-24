@@ -49,3 +49,9 @@ td a{
   background-color: #404046;
   color:  white;
 }
+
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

@@ -4,10 +4,6 @@ include 'dbcon.php';
 $projectid = $_GET['projectid'];
 $username = $_SESSION['username'];
 
-if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
-    header("Location: login.html");
-    exit;
-}
 
 
 $sql = "SELECT * FROM Projects WHERE projectid LIKE $projectid";
@@ -58,7 +54,13 @@ $year = $row['year'];
           <?php echo "<img class='project_image'src='" .$row['image']. "' alt='project_image'>" ?>
         </div>
         <div class="description">
-          <p><?php echo $row['description']; ?></p>
+          <p><?php echo nl2br($row['description']); ?></p>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <pre>
+                <?php echo"<code>".$row['code']. "</code>"; ?>
+            </pre>
         </div>
       </div>
     </div>
