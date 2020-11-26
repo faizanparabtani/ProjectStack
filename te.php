@@ -28,8 +28,12 @@ $username = $_SESSION['username'];
             </div>
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
-                <a href="profile.php"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt="Logout"></li></a>
+                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+                        echo "<a href='profile.php?username=".$username. "'><li>". $username. "</li></a>";
+                        echo "<a href='logout.php'><li>Logout</li></a>";
+                    
+                    }
+                ?>
             </ul>
         </div>
     </div>

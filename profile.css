@@ -10,13 +10,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 700px;
+  width: 900px;
+  background: rgba(113, 168, 235, 0.7);
 }
 
 .background_container img{
   margin-top: 2vh;
-  max-width: 1000px;
-  max-height: 400px;
+  min-width: 900px;
+  max-height: 500px;
 }
 
 .profile_img_container{
@@ -40,11 +41,27 @@
   width: 1000px;
   position: relative;
   bottom: 70px;
+
 }
 
 table, .browse{
   font-family: 'Montserrat', 'sans-serif';
+  background: rgba(113, 168, 235, 0.5);
 }
+
+.browse{
+  min-width: 900px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+table{
+  min-width: 900px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
 
 tr{
   padding: 10px;
@@ -52,12 +69,14 @@ tr{
 }
 
 td a{
-  padding: 10px;
+  margin: 10px;
   font-size: 20px;
 }
 
 
 .varlink{
-  padding: 20px;
-  color: black;
+  color: black
 }
+
+
+/*#FFCC57*/

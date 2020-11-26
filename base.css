@@ -152,6 +152,12 @@
 
 .view{
     background-color: #E86870;
+    color: black;
+}
+
+.viewlink{
+    text-decoration: none;
+    color: black;
 }
 
 .upload{

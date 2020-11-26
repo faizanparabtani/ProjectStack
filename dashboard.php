@@ -41,13 +41,17 @@ $_SESSION['row_count'] = $count;
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="base.html">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>
             <ul class="navigation">
-                <a href="profile.php"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
+                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+                        echo "<a href='profile.php?username=".$username. "'><li>". $username. "</li></a>";
+                        echo "<a href='logout.php'><li>Logout</li></a>";
+                    
+                    }
+                ?>
             </ul>
         </div>
     </div>
@@ -73,7 +77,7 @@ $_SESSION['row_count'] = $count;
                 $finaltime = date("d/m/y g:i A", $temptime);
                 echo "<tr>";
                 echo "<td><a class='varlink' href='project.php?projectid=" .$row['projectid'] . "'>" .$row['topic']. "</a></td>";
-                echo "<td>" .$row['UserName']. "</td>";
+                echo "<td><a class='varlink' href='profile.php?username=" .$row['UserName']. "'>".$row['UserName']. "</td>";
                 echo "<td>" .$finaltime. "</td>";
                 echo "</tr>";
             }
@@ -90,8 +94,8 @@ $_SESSION['row_count'] = $count;
             </div>
         </div>
         <div class="activity_container">
-            <div class="view"><img src="images/view.svg" alt="">View</div>
-            <div class="upload"><img src="images/upload.svg" alt="">Upload</div>
+            <div class="view"><img src="images/view.svg" alt=""><a class="viewlink" href="dashboard.php">View</a></div>
+            <div class="upload"><a href=""></a><img src="images/upload.svg" alt=""><a class="viewlink" href="dashboard.php">Upload</a></div>
         </div>
     </div>
     <div class="students">

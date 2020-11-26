@@ -7,7 +7,8 @@ if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
     exit;
 }
 
-$username = $_SESSION['username'];
+$user = $_SESSION['username'];
+$username = $_GET['username'];
 $sql = "SELECT * FROM Projects WHERE UserName LIKE '$username' ORDER BY upload_time DESC";
 $result = mysqli_query($conn, $sql);
 if (!$result) {
@@ -36,8 +37,12 @@ $_SESSION['row_count'] = $count;
               </a>
             </div>
             <ul class="navigation">
-                <a href="profile.php"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
+                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+                        echo "<a href='profile.php'><li>". $user. "</li></a>";
+                        echo "<a href='logout.php'><li>Logout</li></a>";
+                    
+                    }
+                ?>
             </ul>
         </div>
     </div>

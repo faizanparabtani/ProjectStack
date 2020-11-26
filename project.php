@@ -2,9 +2,11 @@
 session_start();
 include 'dbcon.php';
 $projectid = $_GET['projectid'];
+// if (isset($_SESSION['username'])) {
+//     $username = $_SESSION['username'];
+// }
+error_reporting(E_ALL & ~E_NOTICE);
 $username = $_SESSION['username'];
-
-
 
 $sql = "SELECT * FROM Projects WHERE projectid LIKE $projectid";
 $result = mysqli_query($conn, $sql);
@@ -33,15 +35,19 @@ $year = $row['year'];
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-              <a href="projects.php">
+              <a href="dashboard.php">
                 <img src="images/Logo.svg" alt="ProjectStack">
               </a>
             </div>
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
                 <?php echo "<a href='subject.php?subject=".$subject. "&year=" .$year. "'><li>" .$subject. "</li></a>" ?>
-                <a href="profile.php"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
+                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+                        echo "<a href='profile.php'><li>". $username. "</li></a>";
+                        echo "<a href='logout.php'><li>Logout</li></a>";
+                    
+                    }
+                ?>
             </ul>
         </div>
     </div>
@@ -56,12 +62,16 @@ $year = $row['year'];
         <div class="description">
           <p><?php echo nl2br($row['description']); ?></p>
         </div>
-        <div class="code">
+        <?php if($row['code'] != "") {
+            echo "<div class='code'>
             <h3>Code</h3>
             <pre>
-                <?php echo"<code>".$row['code']. "</code>"; ?>
+                <code>" .$row['code']. "</code>
             </pre>
-        </div>
+        </div>";
+        }
+        ?>
+        
       </div>
     </div>
     <footer class="footer">

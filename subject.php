@@ -52,8 +52,12 @@ $_SESSION['row_count'] = $count;
             </div>
             <ul class="navigation">
                 <a href="dashboard.php"><li>Projects</li></a>
-                <a href="profile.php"><li><?php echo $username;?></li></a>
-                <a href="logout.php"><li><img src="images/avatar.svg" alt=""></li></a>
+                <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
+                        echo "<a href='profile.php'><li>". $username. "</li></a>";
+                        echo "<a href='logout.php'><li>Logout</li></a>";
+                    
+                    }
+                ?>
             </ul>
         </div>
     </div>
@@ -78,7 +82,7 @@ $_SESSION['row_count'] = $count;
             $finaltime = date("d/m/y g:i A", $temptime);
             echo "<tr>";
             echo "<td><a class='varlink' href='project.php?projectid=" .$row['projectid'] . "'>" .$row['topic']. "</a></td>";
-            echo "<td>" .$row['UserName']. "</td>";
+            echo "<td><a href='profile.php?username=" .$row['UserName']. "'>".$row['UserName']. "</td>";
             echo "<td>" .$finaltime. "</td>";
             echo "</tr>";
         }
