@@ -1,45 +1,43 @@
-.browse{
-    font-family: 'Montserrat', 'sans-serif';
-    background-color: paleturquoise;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.browse {
+  font-family: "Montserrat", "sans-serif";
+  background-color: paleturquoise;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.recent{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+.recent {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-table{
+table {
   min-width: 1000px;
 }
 
-thead{
-  font-family: 'Montserrat', 'sans-serif';
+thead {
+  font-family: "Montserrat", "sans-serif";
   font-size: 22px;
 }
 
-tr{
+tr {
   padding: 10px;
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: "Montserrat", "sans-serif";
 }
 
-td a{
+td a {
   margin: 10px;
   font-size: 20px;
 }
 
-
-.varlink{
+.varlink {
   color: #4d4dff;
 }
 
-
-.students img, .projectsvg img{
+.students img,
+.projectsvg img {
   position: absolute;
   max-width: 400px;
   max-height: 300px;
@@ -49,18 +47,20 @@ td a{
   z-index: -1;
 }
 
-.projectsvg img{
+.projectsvg img {
   top: 150px;
   left: 1200px;
 }
 
-.view, .upload, .download{
-  font-family: 'Montserrat', 'sans-serif';
+.view,
+.upload,
+.download {
+  font-family: "Montserrat", "sans-serif";
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.download span{
+.download span {
   padding-top: 10px;
 }

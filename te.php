@@ -6,6 +6,8 @@ error_reporting(0);
 //     header("Location: login.html");
 //     exit;
 // }
+
+
 $username = $_SESSION['username'];
 ?>
 

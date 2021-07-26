@@ -40,7 +40,6 @@ $_SESSION['row_count'] = $count;
                 <?php if((isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
                         echo "<a href='profile.php'><li>". $user. "</li></a>";
                         echo "<a href='logout.php'><li>Logout</li></a>";
-                    
                     }
                 ?>
             </ul>

@@ -7,7 +7,6 @@ error_reporting(0);
 //     exit;
 // }
 
-
 $username = $_SESSION['username'];
 $subject = $_GET['subject'];
 $year = $_GET['year'];

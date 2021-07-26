@@ -2,10 +2,7 @@
 session_start();
 include 'dbcon.php';
 error_reporting(0);
-// if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "OK")) {
-//     header("Location: login.html");
-//     exit;
-// }
+
 $_SESSION['subject_sess'] = "";
 $_SESSION['year_sess'] = "";
 

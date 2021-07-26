@@ -2,9 +2,7 @@
 session_start();
 include 'dbcon.php';
 $projectid = $_GET['projectid'];
-// if (isset($_SESSION['username'])) {
-//     $username = $_SESSION['username'];
-// }
+
 error_reporting(E_ALL & ~E_NOTICE);
 $username = $_SESSION['username'];
 

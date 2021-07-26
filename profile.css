@@ -1,11 +1,11 @@
-.parent_cont{
+.parent_cont {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.profile_container{
+.profile_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,69 +14,62 @@
   background: rgba(113, 168, 235, 0.7);
 }
 
-.background_container img{
+.background_container img {
   margin-top: 2vh;
   min-width: 900px;
   max-height: 500px;
 }
 
-.profile_img_container{
+.profile_img_container {
   position: relative;
   bottom: 90px;
 }
 
-
-.profile_img_container img{
+.profile_img_container img {
   max-width: 200px;
   max-height: 200px;
   border-radius: 100px;
   position: relative;
 }
 
-.bio_container{
-  font-family: 'Montserrat', 'sans-serif';
+.bio_container {
+  font-family: "Montserrat", "sans-serif";
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1000px;
   position: relative;
   bottom: 70px;
-
 }
 
-table, .browse{
-  font-family: 'Montserrat', 'sans-serif';
+table,
+.browse {
+  font-family: "Montserrat", "sans-serif";
   background: rgba(113, 168, 235, 0.5);
 }
 
-.browse{
+.browse {
   min-width: 900px;
   text-align: center;
   padding-top: 10px;
 }
 
-
-table{
+table {
   min-width: 900px;
   text-align: center;
   padding-bottom: 30px;
 }
 
-
-tr{
+tr {
   padding: 10px;
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: "Montserrat", "sans-serif";
 }
 
-td a{
+td a {
   margin: 10px;
   font-size: 20px;
 }
 
-
-.varlink{
-  color: black
+.varlink {
+  color: black;
 }
-
-
-/*#FFCC57*/
